@@ -44,6 +44,12 @@ mari = UneEmpleade "Mari" ["Espaniol", "Frances", "Aleman"]
 empleadesDelMes = [alf, debi, mari]
 
 -- punto 4)
+{-
+	ademas, este punto queda raro, porque no es una idea compleja y sin embargo el codigo si lo es,
+	es dificil de leer aunque este delegado, esa consulta de si la interseccion no es vacia es rara,
+	no se termina de entender bien porque, pero el codigo no cierra
+	no es tan flexible como nos gustaria
+-}
 puedeViajar empleade pais = not . null $ intersect (idiomasQueHabla empleade) (idiomas pais)
 
 -- punto 5)
