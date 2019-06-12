@@ -13,6 +13,7 @@ data Empleade = UneEmpleade {
 } deriving (Show, Eq)
 
 -- punto 1)
+empleadesDelMes :: [Empleade]
 empleadesDelMes = [alf, mari]
 
 -- punto 2)
@@ -21,6 +22,7 @@ espania = UnPais { nombreDePais = "Espania", idiomasOficiales = ["Espaniol"] }
 francia = UnPais { nombreDePais = "Francia", idiomasOficiales = ["Frances"] }
 canada = UnPais { nombreDePais = "Canada", idiomasOficiales = ["Ingles", "Frances"] }
 
+paisesDondeHaySucursales :: [Pais]
 paisesDondeHaySucursales = [mexico, espania, francia, canada]
 
 -- puntos 3) y 4)
@@ -43,11 +45,15 @@ debi = UneEmpleade {
 }
 
 -- punto 5)
+puedeViajar :: Empleade -> Pais -> Bool
 puedeViajar empleade pais = hablaElIdiomaDe pais empleade && noViajoA pais empleade
 
+hablaElIdiomaDe :: Pais -> Empleade -> Bool
 hablaElIdiomaDe pais empleade = not . null $ intersect (idiomasQueHabla empleade) (idiomasOficiales pais)
 
+noViajoA :: Pais -> Empleade -> Bool
 noViajoA pais = not . elem pais . paisesALosQueViajo
 
 -- punto 6)
+paisesALosQuePuedeViajar :: Empleade -> [Pais]
 paisesALosQuePuedeViajar empleade = filter (puedeViajar empleade) paisesDondeHaySucursales
