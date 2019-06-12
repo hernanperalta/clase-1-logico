@@ -20,7 +20,7 @@ viajo(mari, espania).
 empleadeDelMes(mari).
 empleadeDelMes(alf).
 
-% punto 5) y 6)
+% puntos 5) y 6)
 puedeViajar(Empleade, Pais) :-
     empleadeDelMes(Empleade),
     idioma(Pais, Idioma),
