@@ -10,7 +10,6 @@ data Pais = UnPais {
 mexico = UnPais "Mexico" ["Espaniol"]
 brasil = UnPais "Brasil" ["Portugues"]
 eeuu = UnPais "EEUU" ["Ingles"]
-jamaica = UnPais "Jamaica" ["Ingles"]
 canada = UnPais "Canada" ["Ingles", "Frances"]
 guayanaFrancesa = UnPais "Guayana Francesa" ["Frances"]
 
