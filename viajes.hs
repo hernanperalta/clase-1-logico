@@ -55,24 +55,3 @@ puedeViajar empleade pais = not . null $ intersect (idiomasQueHabla empleade) (i
 	necesito una para la "particular", y otra para la existencial
 -}
 paisesALosQuePuedeViajar empleade = filter (puedeViajar empleade) paisesDondeHaySucursales
-
-{-- punto 2) --}
-{--
-este punto queda raro, porque no es una idea compleja y sin embargo
-el codigo si lo es, es dificil de leer aunque este delegado, esa consulta
-de si la interseccion no es vacia es medio rara, no se termina de entender
-bien porque, pero el codigo no cierra, es dificil de agregarle cosas nuevas
-no es tan flexible como nos gustaria
---}
-
--- v1 sin delegar
---paisesALosQueQuiereViajarLaAbu :: [Pais]
---paisesALosQueQuiereViajarLaAbu =
---	filter (not . null . intersect idiomasQueHablaLaAbu . idiomas) paises
-
--- v2 delegando
---paisesALosQueQuiereViajarLaAbu' :: [Pais]
---paisesALosQueQuiereViajarLaAbu' = filter laAbuHablaElIdioma paises
-
---laAbuHablaElIdioma :: Pais -> Bool
---laAbuHablaElIdioma = not . null . intersect idiomasQueHablaLaAbu . idiomas
