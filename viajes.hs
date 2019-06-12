@@ -9,41 +9,45 @@ data Pais = UnPais {
 data Empleade = UneEmpleade {
 	nombreDeEmpleade :: String,
 	idiomasQueHabla :: [String],
-	paisesALosQueViajo :: [String] -- punto 3)
+	paisesALosQueViajo :: [Pais] -- punto 3)
 } deriving (Show, Eq)
 
 -- punto 1)
 empleadesDelMes = [alf, mari]
 
 -- punto 2)
-mexico = UnPais { nombre = "Mexico", idiomasOficiales = ["Espaniol"] }
-espania = UnPais { nombre = "Espania", idiomasOficiales ["Espaniol"] }
-francia = UnPais { nombre = "Francia", idiomasOficiales = ["Frances"] }
-canada = UnPais { nombre = "Canada", idiomasOficiales = ["Ingles", "Frances"] }
+mexico = UnPais { nombreDePais = "Mexico", idiomasOficiales = ["Espaniol"] }
+espania = UnPais { nombreDePais = "Espania", idiomasOficiales = ["Espaniol"] }
+francia = UnPais { nombreDePais = "Francia", idiomasOficiales = ["Frances"] }
+canada = UnPais { nombreDePais = "Canada", idiomasOficiales = ["Ingles", "Frances"] }
 
 paisesDondeHaySucursales = [mexico, espania, francia, canada]
 
 -- puntos 3) y 4)
 alf = UneEmpleade { 
-	nombre = "Alf",
+	nombreDeEmpleade = "Alf",
 	idiomasQueHabla = ["Espaniol", "Ingles"],
-	paisesALosQueViajo = ["Mexico"]
+	paisesALosQueViajo = [mexico]
 }
 
 mari = UneEmpleade {
-	nombre = "Mari",
+	nombreDeEmpleade = "Mari",
 	idiomasQueHabla = ["Espaniol", "Frances"],
-	paisesALosQueViajo = ["Espania"]
+	paisesALosQueViajo = [espania]
 }
 
 debi = UneEmpleade {
-	nombre = "Debi",
+	nombreDeEmpleade = "Debi",
 	idiomasQueHabla = ["Aleman"],
 	paisesALosQueViajo = []
 }
 
 -- punto 5)
-puedeViajar empleade pais = not . null $ intersect (idiomasQueHabla empleade) (idiomas pais)
+puedeViajar empleade pais = hablaElIdiomaDe pais empleade && noViajoA pais empleade
+
+hablaElIdiomaDe pais empleade = not . null $ intersect (idiomasQueHabla empleade) (idiomasOficiales pais)
+
+noViajoA pais = not . elem pais . paisesALosQueViajo
 
 -- punto 6)
 paisesALosQuePuedeViajar empleade = filter (puedeViajar empleade) paisesDondeHaySucursales
