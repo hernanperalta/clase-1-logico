@@ -15,12 +15,12 @@ sabe(debi, espaniol).
 sabe(debi, aleman).
 
 % punto 3)
-empleadeDelMes(mari).
-empleadeDelMes(alf).
-
-% punto 4)
 viajo(alf, mexico).
 viajo(mari, espania).
+
+% punto 4)
+empleadeDelMes(mari).
+empleadeDelMes(alf).
 
 % punto 5)
 % punto 6) consulta existencial sobre el predicado puedeViajar/2

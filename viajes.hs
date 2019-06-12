@@ -4,32 +4,46 @@ import Data.List
 -- punto 1)
 data Pais = UnPais {
 	nombreDePais :: String,
-	idiomas :: [String] -- en un pais puede haber mas de 1 idioma oficial
+	idiomasOficiales :: [String] -- en un pais puede haber mas de 1 idioma oficial
 } deriving (Show, Eq)
 
-mexico = UnPais "Mexico" ["Espaniol"]
-brasil = UnPais "Brasil" ["Portugues"]
-eeuu = UnPais "EEUU" ["Ingles"]
-canada = UnPais "Canada" ["Ingles", "Frances"]
-guayanaFrancesa = UnPais "Guayana Francesa" ["Frances"]
+mexico = UnPais { nombre = "Mexico", idiomasOficiales = ["Espaniol"] }
+espania = UnPais { nombre = "Espania", idiomasOficiales ["Espaniol"] }
+dinamarca = UnPais { nombre = "Dinamarca", idiomasOficiales = ["Danes"] }
+canada = UnPais { nombre = "Canada", idiomasOficiales = ["Ingles", "Frances"] }
 
-paisesDondeHaySucursales = [mexico, brasil, eeuu, jamaica, canada, guayanaFrancesa]
+paisesDondeHaySucursales = [mexico, espania, dinamarca, canada]
 
 -- punto 2)
 data Empleade = UneEmpleade {
 	nombreDeEmpleade :: String,
-	idiomasQueHabla :: [String]
+	idiomasQueHabla :: [String],
+	paisesALosQueViajo :: [String] -- punto 4)
 } deriving (Show, Eq)
 
-alf = UneEmpleade "Alf" ["Espaniol", "Ingles"]
-debi = UneEmpleade "Debi" ["Espaniol", "Portugues"]
-mari = UneEmpleade "Mari" ["Espaniol", "Frances", "Aleman"]
+alf = UneEmpleade { 
+	nombre = "Alf",
+	idiomasQueHabla = ["Espaniol", "Ingles"],
+	paisesALosQueViajo = ["Mexico"]
+}
+
+mari = UneEmpleade {
+	nombre = "Mari",
+	idiomasQueHabla = ["Espaniol", "Frances", "Danes"],
+	paisesALosQueViajo = ["Espania"]
+}
+
+debi = UneEmpleade {
+	nombre = "Debi",
+	idiomasQueHabla = ["Espaniol", "Aleman"],
+	paisesALosQueViajo = []
+}
 
 -- punto 3)
 empleadesDelMes = [alf, mari]
 
--- punto 4)
+-- punto 5)
 puedeViajar empleade pais = not . null $ intersect (idiomasQueHabla empleade) (idiomas pais)
 
--- punto 5)
+-- punto 6)
 paisesALosQuePuedeViajar empleade = filter (puedeViajar empleade) paisesDondeHaySucursales
