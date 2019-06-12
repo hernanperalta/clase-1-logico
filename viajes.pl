@@ -11,7 +11,6 @@ sabe(alf, ingles).
 sabe(mari, espaniol).
 sabe(mari, frances).
 sabe(mari, danes).
-sabe(debi, espaniol).
 sabe(debi, aleman).
 
 % punto 3)

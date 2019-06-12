@@ -18,7 +18,7 @@ paisesDondeHaySucursales = [mexico, espania, dinamarca, canada]
 data Empleade = UneEmpleade {
 	nombreDeEmpleade :: String,
 	idiomasQueHabla :: [String],
-	paisesALosQueViajo :: [String] -- punto 4)
+	paisesALosQueViajo :: [String] -- punto 3)
 } deriving (Show, Eq)
 
 alf = UneEmpleade { 
@@ -35,11 +35,11 @@ mari = UneEmpleade {
 
 debi = UneEmpleade {
 	nombre = "Debi",
-	idiomasQueHabla = ["Espaniol", "Aleman"],
+	idiomasQueHabla = ["Aleman"],
 	paisesALosQueViajo = []
 }
 
--- punto 3)
+-- punto 4)
 empleadesDelMes = [alf, mari]
 
 -- punto 5)
