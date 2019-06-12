@@ -18,10 +18,10 @@ empleadesDelMes = [alf, mari]
 -- punto 2)
 mexico = UnPais { nombre = "Mexico", idiomasOficiales = ["Espaniol"] }
 espania = UnPais { nombre = "Espania", idiomasOficiales ["Espaniol"] }
-dinamarca = UnPais { nombre = "Dinamarca", idiomasOficiales = ["Danes"] }
+francia = UnPais { nombre = "Francia", idiomasOficiales = ["Frances"] }
 canada = UnPais { nombre = "Canada", idiomasOficiales = ["Ingles", "Frances"] }
 
-paisesDondeHaySucursales = [mexico, espania, dinamarca, canada]
+paisesDondeHaySucursales = [mexico, espania, francia, canada]
 
 -- puntos 3) y 4)
 alf = UneEmpleade { 
@@ -32,7 +32,7 @@ alf = UneEmpleade {
 
 mari = UneEmpleade {
 	nombre = "Mari",
-	idiomasQueHabla = ["Espaniol", "Frances", "Danes"],
+	idiomasQueHabla = ["Espaniol", "Frances"],
 	paisesALosQueViajo = ["Espania"]
 }
 
