@@ -1,24 +1,24 @@
 % punto 1)
+empleadeDelMes(mari).
+empleadeDelMes(alf).
+
+% punto 2)
 idioma(mexico,      espaniol).
 idioma(espania,     espaniol).
 idioma(francia,     frances).
 idioma(canada,      ingles).
 idioma(canada,      frances).
 
-% punto 2)
+% punto 3)
 sabe(alf, espaniol).
 sabe(alf, ingles).
 sabe(mari, espaniol).
 sabe(mari, frances).
 sabe(debi, aleman).
 
-% punto 3)
+% punto 4)
 viajo(alf, mexico).
 viajo(mari, espania).
-
-% punto 4)
-empleadeDelMes(mari).
-empleadeDelMes(alf).
 
 % puntos 5) y 6)
 puedeViajar(Empleade, Pais) :-
