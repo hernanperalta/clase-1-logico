@@ -1,12 +1,21 @@
 import Text.Show.Functions
 import Data.List
 
--- punto 1)
 data Pais = UnPais {
 	nombreDePais :: String,
 	idiomasOficiales :: [String] -- en un pais puede haber mas de 1 idioma oficial
 } deriving (Show, Eq)
 
+data Empleade = UneEmpleade {
+	nombreDeEmpleade :: String,
+	idiomasQueHabla :: [String],
+	paisesALosQueViajo :: [String] -- punto 3)
+} deriving (Show, Eq)
+
+-- punto 1)
+empleadesDelMes = [alf, mari]
+
+-- punto 2)
 mexico = UnPais { nombre = "Mexico", idiomasOficiales = ["Espaniol"] }
 espania = UnPais { nombre = "Espania", idiomasOficiales ["Espaniol"] }
 dinamarca = UnPais { nombre = "Dinamarca", idiomasOficiales = ["Danes"] }
@@ -14,13 +23,7 @@ canada = UnPais { nombre = "Canada", idiomasOficiales = ["Ingles", "Frances"] }
 
 paisesDondeHaySucursales = [mexico, espania, dinamarca, canada]
 
--- punto 2)
-data Empleade = UneEmpleade {
-	nombreDeEmpleade :: String,
-	idiomasQueHabla :: [String],
-	paisesALosQueViajo :: [String] -- punto 3)
-} deriving (Show, Eq)
-
+-- puntos 3) y 4)
 alf = UneEmpleade { 
 	nombre = "Alf",
 	idiomasQueHabla = ["Espaniol", "Ingles"],
@@ -38,9 +41,6 @@ debi = UneEmpleade {
 	idiomasQueHabla = ["Aleman"],
 	paisesALosQueViajo = []
 }
-
--- punto 4)
-empleadesDelMes = [alf, mari]
 
 -- punto 5)
 puedeViajar empleade pais = not . null $ intersect (idiomasQueHabla empleade) (idiomas pais)
