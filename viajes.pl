@@ -1,16 +1,15 @@
 % punto 1)
-idioma(mexico,          espaniol).
-idioma(espania,         espaniol).
-idioma(dinamarca,       danes).
-idioma(canada,          ingles).
-idioma(canada,          frances).
+idioma(mexico,      espaniol).
+idioma(espania,     espaniol).
+idioma(francia,     frances).
+idioma(canada,      ingles).
+idioma(canada,      frances).
 
 % punto 2)
 sabe(alf, espaniol).
 sabe(alf, ingles).
 sabe(mari, espaniol).
 sabe(mari, frances).
-sabe(mari, danes).
 sabe(debi, aleman).
 
 % punto 3)
