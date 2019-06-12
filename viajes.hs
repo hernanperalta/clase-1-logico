@@ -2,12 +2,6 @@ import Text.Show.Functions
 import Data.List
 
 -- punto 1)
-{--
-tenemos que crear un tad para asociar pais con idioma
-bien podria ser una tupla o un data
-que tipo es? Pais? Idioma? PaisEIdioma? Sucursal?
-ponele que Pais cierra
---}
 data Pais = UnPais {
 	nombreDePais :: String,
 	idiomas :: [String] -- en un pais puede haber mas de 1 idioma oficial
