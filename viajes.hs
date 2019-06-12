@@ -27,7 +27,7 @@ debi = UneEmpleade "Debi" ["Espaniol", "Portugues"]
 mari = UneEmpleade "Mari" ["Espaniol", "Frances", "Aleman"]
 
 -- punto 3)
-empleadesDelMes = [alf, debi, mari]
+empleadesDelMes = [alf, mari]
 
 -- punto 4)
 puedeViajar empleade pais = not . null $ intersect (idiomasQueHabla empleade) (idiomas pais)
